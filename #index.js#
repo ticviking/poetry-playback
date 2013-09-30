@@ -6,7 +6,7 @@
 
     // Poem object lines and dates
     function Poem(text){
-	this.date = Date.now();
+	this.time = Date.now();
 	this.text = text;
     }
 
@@ -28,7 +28,12 @@
     daPoem.addEventListener("input", pushPoem);
 
     // setup the playback function
-    
+    function Playback(){
+	daPoem.removeEventListener("input", pushPoem);
+	daPoem.disabled = true
+	var playBackStartTime = poemArray[0].time
+	
+    }
     
 
     window.poemArray = poemArray
